@@ -10,6 +10,21 @@ class Team {
     var hinchas:Int = 0
     var sponsors:Int = 0
 
+    constructor(name:String, country:String){
+        this.name = name
+        this.country = country
+        println("Se está ejecutando el constructor 1")
+    }
+
+    constructor(players: Int = 11){
+        this.players = players
+        println("Se está ejecutando el constructor 2")
+    }
+
+    constructor(){
+        println("Se está ejecutando el constructor 3")
+    }
+
     fun noParticipar(){
         state = false
         println("$name de $country no está participando en ningún torneo")
@@ -25,7 +40,7 @@ class Team {
         if(totalJugadores<44 && money>0.0){
             this.players = this.players + players
             println("$name va comprar $players jugadores por un valor de $money dólares")
-            print("$name tendrá ${this.players} jugadores")
+            println("$name tendrá ${this.players} jugadores")
         }else{
             print("$name va comprar $players jugadores, puedes comprar hasta ${44 - this.players} por un valor de $money dólares")
         }
